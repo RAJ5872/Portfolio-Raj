@@ -34,7 +34,7 @@ const Hero = () => {
   ]
 
   return (
-    <section ref={heroRef} id="home" className="relative min-h-screen flex items-center justify-center px-4 md:px-6 overflow-hidden bg-background grid-pattern">
+    <section ref={heroRef} id="home" className="relative min-h-screen flex items-center justify-center px-4 md:px-6 overflow-hidden bg-background grid-pattern pt-16">
       {/* Radial glow behind hero text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
