@@ -82,7 +82,7 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-20 px-4 md:px-6 relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-20 px-4 md:px-6 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5 pointer-events-none"></div>
       
@@ -105,7 +105,7 @@ const Contact = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 px-2"
           >
             Get In <span className="text-primary text-glow">Touch</span>
           </motion.h2>
@@ -114,19 +114,19 @@ const Contact = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-gray-400 text-center mb-16 max-w-2xl mx-auto"
+            className="text-gray-400 text-center mb-12 sm:mb-16 max-w-2xl mx-auto px-4 text-sm sm:text-base"
           >
             Have a project in mind or want to collaborate? Feel free to reach out!
           </motion.p>
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="glass-strong rounded-2xl p-8 shadow-soft"
+              className="glass-strong rounded-2xl p-4 sm:p-6 md:p-8 shadow-soft"
             >
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input
@@ -136,7 +136,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full p-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary"
+                  className="w-full p-2.5 sm:p-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary text-sm sm:text-base"
                 />
                 <input
                   type="email"
@@ -145,7 +145,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full p-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary"
+                  className="w-full p-2.5 sm:p-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary text-sm sm:text-base"
                 />
                 <textarea
                   name="message"
@@ -154,12 +154,12 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full p-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary resize-none"
+                  className="w-full p-2.5 sm:p-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary resize-none text-sm sm:text-base"
                 />
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-2.5 sm:py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                 >
                   {loading ? 'Sending...' : 'Send Message'}
                 </button>
@@ -172,7 +172,7 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="space-y-4"
+              className="space-y-3 sm:space-y-4"
             >
               {contactInfo.map((item, index) => (
                 <motion.a
@@ -180,22 +180,22 @@ const Contact = () => {
                   href={item.url || '#'}
                   target={item.url ? '_blank' : '_self'}
                   rel={item.url ? 'noopener noreferrer' : ''}
-                  className="glass-card rounded-xl p-6 flex items-center gap-4 hover:bg-white/10 transition-all cursor-pointer group"
+                  className="glass-card rounded-xl p-4 sm:p-6 flex items-center gap-3 sm:gap-4 hover:bg-white/10 transition-all cursor-pointer group"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + index * 0.1 }}
                   whileHover={{ y: -4, scale: 1.02 }}
                 >
-                  <div className={`w-12 h-12 bg-${item.color}/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                    <item.icon className={`text-xl text-${item.color}`} />
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-${item.color}/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0`}>
+                    <item.icon className={`text-lg sm:text-xl text-${item.color}`} />
                   </div>
-                  <div className="flex-1">
-                    <div className="text-sm text-gray-400">{item.label}</div>
-                    {item.value && <div className="text-white font-medium">{item.value}</div>}
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs sm:text-sm text-gray-400">{item.label}</div>
+                    {item.value && <div className="text-sm sm:text-base text-white font-medium truncate">{item.value}</div>}
                   </div>
                   {item.value && (
-                    <div className={`w-2 h-2 bg-${item.color} rounded-full opacity-0 group-hover:opacity-100 transition-opacity`}></div>
+                    <div className={`w-2 h-2 bg-${item.color} rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0`}></div>
                   )}
                 </motion.a>
               ))}
@@ -206,27 +206,27 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.8 }}
-                className="glass-card rounded-xl p-6 mt-6"
+                className="glass-card rounded-xl p-4 sm:p-6 mt-4 sm:mt-6"
               >
-                <h3 className="text-lg font-semibold mb-4">Connect with me</h3>
-                <div className="flex gap-4">
+                <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Connect with me</h3>
+                <div className="flex gap-3 sm:gap-4">
                   <motion.a
                     href="https://github.com/RAJ5872"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:border-primary/50 hover:neon-border transition-all"
+                    className="w-10 h-10 sm:w-12 sm:h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:border-primary/50 hover:neon-border transition-all"
                     whileHover={{ scale: 1.1, rotate: 10 }}
                   >
-                    <FaGithub className="text-xl" />
+                    <FaGithub className="text-lg sm:text-xl" />
                   </motion.a>
                   <motion.a
                     href="https://www.linkedin.com/in/rajpanchalgecvgecictdte?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:border-primary/50 hover:neon-border transition-all"
+                    className="w-10 h-10 sm:w-12 sm:h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:border-primary/50 hover:neon-border transition-all"
                     whileHover={{ scale: 1.1, rotate: 10 }}
                   >
-                    <FaLinkedin className="text-xl" />
+                    <FaLinkedin className="text-lg sm:text-xl" />
                   </motion.a>
                 </div>
               </motion.div>

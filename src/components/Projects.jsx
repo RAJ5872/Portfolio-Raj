@@ -158,7 +158,7 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="py-20 px-4 relative overflow-hidden">
+    <section id="projects" className="py-16 sm:py-20 px-4 relative overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5 pointer-events-none"></div>
       
@@ -181,7 +181,7 @@ const Projects = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4"
           >
             My <span className="text-primary text-glow">Projects</span>
           </motion.h2>
@@ -190,12 +190,12 @@ const Projects = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-gray-400 text-center mb-16 max-w-2xl mx-auto"
+            className="text-gray-400 text-center mb-12 sm:mb-16 max-w-2xl mx-auto px-4 text-sm sm:text-base"
           >
             A showcase of my recent work and personal projects. Each project represents my passion for solving real-world problems.
           </motion.p>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
             {projects.map((project, index) => (
               <ProjectCard
                 key={project.title}

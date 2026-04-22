@@ -79,13 +79,13 @@ const Hero = () => {
             </span>
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 break-words">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent text-glow">
               Raj Panchal
             </span>
           </h1>
           
-          <div className="text-2xl md:text-3xl text-gray-300 mb-6 h-16">
+          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-6 min-h-[4rem] sm:min-h-[5rem] md:h-16">
             <TypeAnimation
               sequence={[
                 'Full Stack Engineer',
@@ -104,7 +104,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-gray-300 text-lg mb-8 max-w-lg leading-relaxed"
+            className="text-gray-300 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-lg leading-relaxed px-2"
           >
             Final Year ICT Student at Vishwakarma Government Engineering College.
             <span className="text-primary font-semibold"> Building scalable web apps & solving real-world problems.</span>
@@ -114,11 +114,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center lg:justify-start px-2"
           >
             <motion.a
               href="#projects"
-              className="group px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-lg font-semibold text-white glow-soft hover:glow-strong transition-all flex items-center justify-center gap-2"
+              className="group px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-primary to-secondary rounded-lg font-semibold text-white glow-soft hover:glow-strong transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -129,7 +129,7 @@ const Hero = () => {
               href={resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 border-2 border-primary rounded-lg font-semibold text-primary hover:bg-primary/10 hover:neon-border transition-all flex items-center justify-center gap-2"
+              className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-primary rounded-lg font-semibold text-primary hover:bg-primary/10 hover:neon-border transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
